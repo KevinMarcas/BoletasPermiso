@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.text('"Registrar el horario en el que registras tu marcación por (BIOMETRICO)"', dateTimesX + 5, currentDateTimeY + lineHeight + 5, { maxWidth: (pageWidth - marginX * 2) / 2 - 15 });
 
         //Cuadro para el sello del centro de control
-        doc.rect(dateTimesX + (pageWidth - marginX * 2) / 3 - 7, currentDateTimeY + lineHeight * 2 + 5, 30, 20); // Posicionarlo un poco más abajo
+        doc.rect(dateTimesX + (pageWidth - marginX * 2) / 3 - 7, currentDateTimeY + lineHeight * 2 + 6, 30, 20); // Posicionarlo un poco más abajo
         doc.setFontSize(9);
         doc.text("Sello del Centro de Control", dateTimesX + (pageWidth - marginX * 2) / 3 + 7, currentDateTimeY + lineHeight * 2 + 30, { align: 'center', maxWidth: 30});
 
@@ -258,17 +258,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const signatureLineLength = 40;
 
         // Firma del Trabajador
-        doc.line(marginX + 2, signatureY, marginX + 1 + signatureLineLength, signatureY);
+        doc.line(marginX + 2, signatureY + 8, marginX + 1 + signatureLineLength, signatureY + 8); //linea trabajador
         doc.setFontSize(9);
-        doc.text("Firma del Trabajador", marginX + 2 + signatureLineLength / 2, signatureY + 5, { align: 'center' });
+        doc.text("Firma del Trabajador", marginX + 2 + signatureLineLength / 2, signatureY + 11.5, { align: 'center' });
 
         // Firma y sello del jefe inmediato
-        doc.line(marginX + 50, signatureY, marginX + 50 + signatureLineLength, signatureY);
-        doc.text("Firma y sello \n del Jefe Inmediato", marginX + 50 + signatureLineLength / 2, signatureY + 5, { align: 'center' });
+        doc.line(marginX + 50, signatureY + 8, marginX + 50 + signatureLineLength, signatureY + 8); //linea jefe inmediato
+        doc.text("Firma y sello \n del Jefe Inmediato", marginX + 50 + signatureLineLength / 2, signatureY + 11.5, { align: 'center' });
 
         // Firma y sello del responsable del personal
-        doc.line(marginX + 100, signatureY, marginX + 100 + signatureLineLength, signatureY);
-        doc.text("Firma y sello del \n responsable del personal", marginX + 100 + signatureLineLength / 2, signatureY + 5, { align: 'center' });
+        doc.line(marginX + 100, signatureY + 8, marginX + 100 + signatureLineLength, signatureY + 8); //linea responsable del personal
+        doc.text("Firma y sello del \n responsable del personal", marginX + 100 + signatureLineLength / 2, signatureY + 11.5, { align: 'center' });
 
         // Guardar el PDF
         doc.save('BoletaDePermiso.pdf');
