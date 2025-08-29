@@ -70,6 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.setFontSize(10);
         doc.setFont(undefined, 'bold');
         doc.text("CORTE SUPERIOR DE JUSTICIA DE LIMA SUR", marginX + 50, y);
+        //Fecha impresion
+        var horaNow = new Date();
+        doc.text(horaNow.toLocaleDateString() +" " + horaNow.toLocaleTimeString() , marginX + 150, y);
+        
         y += 4;
         doc.text("Modulo Penal", marginX, y);
         y += lineHeight * 1.5;
@@ -208,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.setFont(undefined, 'bold');
         doc.text("DETALLE MOTIVO", marginX + 2, y + lineHeight / 2);
         doc.setFont(undefined, 'normal');
-        doc.text(reasonDetail, marginX + 2, y + lineHeight * 2 + lineHeight / 20, { maxWidth: (pageWidth - marginX * 2) / 2 - 10 }); // Detalle del motivo
+        doc.text(reasonDetail, marginX + 2, y + lineHeight * 1 + lineHeight / 20, { maxWidth: (pageWidth - marginX * 2) / 2 - 10 }); // Detalle del motivo
         doc.setFontSize(8);
         doc.setFont(undefined, 'normal');
         doc.text("(Adjunta el sustento en casos de Comisión de servicio, Omisión de marcado, cita médica, capacitación oficializada)", marginX + 2, y + lineHeight * 3.7, { maxWidth: (pageWidth - marginX * 2) / 2 - 10 });
@@ -233,15 +237,19 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.setFont(undefined, 'normal');
 
         // Rectángulos para las fechas
-        doc.rect(dateTimesX + 2, currentDateTimeY, 20, lineHeight);
-        doc.text(startDate, dateTimesX + 3, currentDateTimeY + 4);
-        doc.rect(dateTimesX + 32, currentDateTimeY, 20, lineHeight);
-        doc.text(endDate, dateTimesX + 33, currentDateTimeY + 4);
+        doc.rect(dateTimesX, currentDateTimeY - 9, 28, lineHeight + 2); //arriba Fecha inicio
+        doc.rect(dateTimesX, currentDateTimeY, 28, lineHeight + 8.5);
+        doc.text(startDate, dateTimesX + 5, currentDateTimeY + 6);
+        doc.rect(dateTimesX + 28, currentDateTimeY - 9, 35, lineHeight + 2); //arriba fecha fin
+        doc.rect(dateTimesX + 28, currentDateTimeY, 35, lineHeight + 8.5);
+        doc.text(endDate, dateTimesX + 37, currentDateTimeY + 6);
 
         // Horas
+        doc.rect(dateTimesX + 63, currentDateTimeY - 9, 22, lineHeight + 2); //arriba hora
+        doc.rect(dateTimesX + 63, currentDateTimeY, 22, lineHeight + 1);
         doc.text("DE: " + startTime, dateTimesX + 68, currentDateTimeY + 4);
         currentDateTimeY += lineHeight;
-        doc.text("A: " + endTime, dateTimesX + 68, currentDateTimeY + 4);
+        doc.text("A: " + endTime, dateTimesX + 68, currentDateTimeY + 5);
 
         doc.setFontSize(8);
         doc.text('"Registrar el horario en el que registras tu marcación por (BIOMETRICO)"', dateTimesX + 5, currentDateTimeY + lineHeight + 5, { maxWidth: (pageWidth - marginX * 2) / 2 - 15 });
