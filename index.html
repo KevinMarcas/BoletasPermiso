@@ -29,8 +29,19 @@
                         <input type="text" class="form-control" id="position" placeholder="Ej: Asistente de Informática" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="escalafon" class="form-label">Regimen Laboral:</label>
-                        <input type="text" class="form-control" id="escalafon" placeholder="Ej: 276 / CAS / 728" required>
+                        <label for="escalafon" class="form-label d-block">Regimen Laboral:</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="regimen" id="regimen276" value="276">
+                            <label for="regimen276" class="form-check-label">276</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="regimen" id="regimenCAS" value="CAS">
+                            <label for="regimenCAS" class="form-check-label">CAS</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="regimen" id="regimen728" value="728">
+                            <label for="regimen728" class="form-check-label">728</label>
+                        </div>
                     </div>
                 </div>
 
@@ -84,7 +95,7 @@
 
                 <div class="mb-3">
                     <label for="reasonDetail" class="form-label">Detalle del motivo y sustento:</label>
-                    <textarea class="form-control" id="reasonDetail" rows="3" placeholder="Detallar el motivo del permiso." required></textarea>
+                    <textarea class="form-control" id="reasonDetail" rows="3" placeholder="Detallar el motivo de permiso." required></textarea>
                 </div>
 
                 <h5 class="mt-4 mb-3">Fecha de Permiso</h5>
@@ -123,7 +134,7 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-lg">Generar Boleta en PDF</button>
+                    <button type="submit" class="btn btn-generate btn-lg">Generar Boleta en PDF</button>
                 </div>
             </form>
         </div>
@@ -137,5 +148,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>

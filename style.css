@@ -1,76 +1,110 @@
+/* Estilos generales del cuerpo de la página */
 body {
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
+    background-color: #e6f7ff; /* Un azul muy claro, casi blanco */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
-
+/* Estilos para el contenedor principal */
 .container {
     max-width: 850px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 0.75rem;
-    padding: 0 0 0 0;
-    box-shadow: 10px 15px 25px rgb(3, 80, 168);
-
+    padding: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    background-color: transparent;
 }
 
+/* Estilos para la tarjeta del formulario */
 .card {
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     border: none;
-    background-color: #007bff;
-
+    background-color: #ffffff;
 }
 
+/* Estilos para el título principal */
 .card-title {
-    color: #000000; /* Un azul más corporativo */
-    font-weight: bold;
+    color: #004d99; /* Un azul corporativo oscuro */
+    font-weight: 700;
+    font-size: 2rem;
+    padding-top: 1rem;
 }
 
+/* Estilos para los subtítulos */
 h5 {
-    color: #000000;
-    border-bottom: 2px solid #efebe9;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
+    color: #0073e6; /* Un azul vibrante, usado como acento */
+    border-bottom: 2px solid #b3d9ff; /* Un azul claro como separador */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-
+/* Estilos para las etiquetas de los campos */
 .form-label {
-    font-weight: bold;
-    color: #000000;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5rem;
 }
 
+/* Estilos para los campos de entrada y grupos de iconos */
 .form-control, .input-group-text {
-    border-radius: 0.35rem;
+    border-radius: 0.5rem;
+    border: 1px solid #cceeff; /* Borde más suave */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al enfocar los campos de entrada */
+.form-control:focus {
+    border-color: #0073e6;
+    box-shadow: 0 0 0 0.25rem rgba(0, 115, 230, 0.25);
 }
 
 .input-group-text {
-    background-color: #ffffff;
-    color: #495057;
+    background-color: #f0f8ff; /* Un azul muy claro para el fondo del icono */
+    color: #004d99;
+    border-left: none;
 }
 
-
-.btn-primary {
-    background-color: #039227;
-    border-color: #02771f;
+/* Estilos para los botones de generar PDF */
+.btn-generate {
+    background-color: #0073e6; /* Azul principal corporativo */
+    border-color: #005bb5;
     font-weight: bold;
     padding: 12px 20px;
     border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
 }
 
-.btn-primary:hover {
-    background-color: #03DA37;
-    border-color: #03DA37;
+.btn-generate:hover {
+    background-color: #005bb5;
+    border-color: #005bb5;
+    transform: translateY(-2px);
 }
 
-/* Estilos para los radios */
+/* Estilos para los radio buttons */
 .form-check {
     margin-bottom: 8px;
+    padding-left: 2em;
+}
+
+.form-check-input {
+    border-color: #ccc;
 }
 
 .form-check-input:checked {
-    background-color: #9a1413;
-    border-color: #9a1413;
+    background-color: #0073e6; /* Azul corporativo para la selección */
+    border-color: #0073e6;
+}
+
+.form-check-label {
+    cursor: pointer;
+    color: #333333;
 }
 
 /* Estilos para el calendario Flatpickr */
@@ -80,12 +114,10 @@ h5 {
 }
 
 .flatpickr-day.selected, .flatpickr-day.selected:hover {
-    background: #007bff;
-    border-color: #007bff;
+    background: #0073e6;
+    border-color: #0073e6;
 }
 
 .flatpickr-day.today {
-    border-color: #007bff;
+    border-color: #0073e6;
 }
-
-
