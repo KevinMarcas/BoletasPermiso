@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         doc.text("CORTE SUPERIOR DE JUSTICIA DE LIMA SUR", marginX + 50, y);
         //Fecha impresion
         var horaNow = new Date();
-        doc.text(horaNow.toLocaleDateString() +" " + horaNow.toLocaleTimeString() , marginX + 150, y);
+        //doc.text(horaNow.toLocaleDateString() +" " + horaNow.toLocaleTimeString() , marginX + 150, y);
         
         y += 4;
         doc.text("Modulo Penal", marginX, y);
@@ -353,4 +353,5 @@ regimenLeft.forEach((r, index) => {
         // Guardar el PDF
         doc.save('BoletaDePermiso.pdf');
     }
+
 });
